@@ -1,0 +1,26 @@
+:host{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255,255,255,0.5);
+    opacity: 0.98;
+}
+
+.navbar-start-custom-item{
+   width: 100%;
+   .search-box-container{
+    flex-grow: 1;
+    align-self: center;
+    max-width: 50%;
+     margin: auto;
+   }
+   input{
+    border-top-right-radius: 0;
+   border-bottom-right-radius: 0;
+  }
+
+ .search-btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+ }
+}

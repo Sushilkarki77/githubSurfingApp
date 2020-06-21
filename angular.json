@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/scss/styles.scss"
             ],
             "scripts": []
           },
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "githubSurfingApp"
+    }
+  },
+  "defaultProject": "githubSurfingApp",
+  "cli": {
+    "analytics": "a49e84af-15ee-4b0e-abe7-36afd50bf51d"
+  }
 }

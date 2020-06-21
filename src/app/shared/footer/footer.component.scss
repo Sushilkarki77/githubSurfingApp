@@ -1,3 +1,18 @@
 footer{
     padding: 0 60px;
+    background-color: #ffffff;
+}
+
+.scroll-to-top-btn{
+    position: absolute;
+    bottom: 0;
+    right: 36px;
+    opacity: 0.8;
+    bottom: 36px;
+    background-color: rgba(0,0,0,.3);
+    color: #ffffff;
+    border-radius: 3px;
+    display: none;
+    transition: display .3s ease-out;
+    z-index: 11;
 }

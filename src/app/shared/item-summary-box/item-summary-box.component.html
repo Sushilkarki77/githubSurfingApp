@@ -1,35 +1,32 @@
 <div class="box">
     <article class="media">
-        <div class="media-left">
-            <figure class="image is-64x64">
-                <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-            </figure>
-        </div>
         <div class="media-content">
             <div class="content">
-                <p>
-                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                    <br>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
-                    fringilla egestas. Nullam condimentum luctus turpis.
-                </p>
+                <div style="margin: 0;">
+                   <div style="display: flex;"> 
+                       <fa-icon [icon]="faDatabase" [size]="'xs'"></fa-icon><h5 class="box-title">{{item?.full_name}}</h5>
+                    </div>
+                    <div style="min-height: 35px;">
+                        <p class="description">{{item?.description}}</p>
+                    </div>
+                </div>
             </div>
             <nav class="level is-mobile">
                 <div class="level-left">
-                    <a class="level-item" aria-label="reply">
+                    <a class="level-item" >
                         <span class="icon is-small">
-                            <i class="fas fa-reply" aria-hidden="true"></i>
-                        </span>
+                            <fa-icon [icon]="faCircle" [size]="'xs'"></fa-icon>
+                        </span><p>15</p>
                     </a>
-                    <a class="level-item" aria-label="retweet">
+                    <a class="level-item" >
                         <span class="icon is-small">
-                            <i class="fas fa-retweet" aria-hidden="true"></i>
-                        </span>
+                            <fa-icon [icon]="faStar" [size]="'xs'"></fa-icon> 
+                        </span><p>15</p>
                     </a>
-                    <a class="level-item" aria-label="like">
-                        <span class="icon is-small">
-                            <i class="fas fa-heart" aria-hidden="true"></i>
-                        </span>
+                    <a class="level-item" >
+                    <span class="icon is-small">
+                            <fa-icon [icon]="faNetworkWired" [size]="'xs'"></fa-icon> 
+                        </span><p>15</p>
                     </a>
                 </div>
             </nav>

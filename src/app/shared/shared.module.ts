@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { ItemSummaryBoxComponent } from './item-summary-box/item-summary-box.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -11,7 +13,8 @@ import { ItemSummaryBoxComponent } from './item-summary-box/item-summary-box.com
     ItemSummaryBoxComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [
     NavComponent,

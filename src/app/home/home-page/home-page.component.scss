@@ -1,5 +1,9 @@
-.flex-container{
+.flex-container {
     display: flex;
     flex-wrap: wrap;
-
+    height: 100%;
+    h1 {
+        font-size: 51px;
+        margin: auto;
+    }
 }

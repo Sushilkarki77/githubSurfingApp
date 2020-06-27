@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { RepoSummary } from '../interfaces/repo-summary';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { SearchResult } from '../interfaces/search-result';
 
 const apiEndPoint = environment.apiEndPoint;
 
@@ -14,8 +14,9 @@ export class GetDataService {
 
   constructor(private http: HttpClient) { }
 
-  getPublicRepositories(): Observable<RepoSummary[]> {
-    return this.http.get<RepoSummary[]>(apiEndPoint + 'repositories');
+  getPublicRepositories(queryParameter): Observable<SearchResult> {
+    return this.http.get<SearchResult>(apiEndPoint + `search/repositories?` + queryParameter);
   }
+  
 
 }

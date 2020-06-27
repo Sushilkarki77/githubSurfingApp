@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  searchKey: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  navigateToSearchResultPage(key): void {
+    if (key && key.trim()) { this.router.navigate(['search'], { queryParams: { searchKey: key } }); }
   }
 
 }

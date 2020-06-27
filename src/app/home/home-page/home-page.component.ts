@@ -9,19 +9,9 @@ import { RepoSummary } from 'src/app/core/interfaces/repo-summary';
 })
 export class HomePageComponent implements OnInit {
 
-  repositoriesSummaries: Array<RepoSummary> = [];
-
-  constructor(private getDatService: GetDataService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.getPublicRepositories();
-  }
-
-  getPublicRepositories() {
-    this.getDatService.getPublicRepositories().subscribe((data: RepoSummary[]) => {
-      this.repositoriesSummaries = data;
-      console.log(data);
-    });
   }
 
 }

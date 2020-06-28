@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomePageComponent } from './home-page/home-page.component';
-import { CoreRoutingModule } from './core-routing.module';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [HomePageComponent],
+  declarations: [
+  ],
   imports: [
     CommonModule,
-    CoreRoutingModule
-  ]
+  ],
+  providers: [HttpClientModule],
+
 })
 export class CoreModule { }

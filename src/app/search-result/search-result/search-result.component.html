@@ -1,0 +1,21 @@
+<div [style.visibility]="loading?'hidden': 'unset'" class="top-bar">
+    <p>showing {{searchResult?.total_count}} available repository results</p>    
+    <app-search-filter (filterTypeChanged) = "changeFilterProps($event)" ></app-search-filter>
+</div>
+<div *ngIf="!loading" class="flex-container">
+    <app-item-summary-box *ngFor="let key of searchResult?.items | paginate: config" [item]="key"></app-item-summary-box>
+</div>
+
+<app-loading *ngIf="loading"></app-loading>
+<pagination-template *ngIf="searchResult?.items?.length > 0" #p="paginationApi" [id]="config.id" (pageChange)="onPageChange($event)" [maxSize]="10">
+    <nav class="pagination is-small" role="navigation" aria-label="pagination">
+        <a class="pagination-previous" [class.disabled]="p.isFirstPage()" *ngIf="!p.isFirstPage()" (click)="p.previous()">Previous</a>
+        <a class="pagination-next" [class.disabled]="p.isLastPage()" *ngIf="!p.isLastPage()" (click)="p.next()">Next page</a>
+        <ul class="pagination-list">
+            <li *ngFor="let page of p.pages">
+                <a class="pagination-link" [class.is-current]="p.getCurrent() === page.value" (click)="p.setCurrent(page.value)"*ngIf="p.getCurrent() !== page.value">{{ page.label }}</a>
+                <a class="pagination-link is-current" *ngIf="p.getCurrent() === page.value"> <span>{{ page.label }}</span></a>
+            </li>
+        </ul>
+    </nav>
+</pagination-template>

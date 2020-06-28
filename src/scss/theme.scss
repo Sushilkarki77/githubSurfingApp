@@ -1,15 +1,24 @@
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
     color: #3f536e;
-    overflow: auto;
 }
-html{
+html {
     overflow-y: unset !important;
 }
-.app-wrapper{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+.app-wrapper {
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -17,6 +26,6 @@ html{
     height: 100%;
     width: 100%;
 }
-.container{
+.container {
     width: 100%;
 }

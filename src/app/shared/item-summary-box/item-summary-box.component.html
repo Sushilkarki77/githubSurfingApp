@@ -1,0 +1,38 @@
+<div class="box">
+    <article class="media">
+        <div class="media-content" style=" width: 100%; ">
+            <div class="content">
+                <div style="margin: 0;">
+                   <div style="display: flex;"> 
+                       <fa-icon [icon]="faDatabase" [size]="'xs'"></fa-icon><h5 class="box-title" >{{item?.full_name}}</h5>
+                    </div>
+                    <div style="min-height: 35px;">
+                        <p class="description">{{item?.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <nav class="level is-mobile">
+                <div class="level-left">
+                    <a *ngIf="item?.language" class="level-item" >
+                        <span class="icon is-small">
+                            <fa-icon [icon]="faCircle" [size]="'xs'"></fa-icon>
+                        </span><p>{{item?.language}}</p>
+                    </a>
+                    <a *ngIf="item?.score" class="level-item" >
+                        <span class="icon is-small">
+                            <fa-icon [icon]="faStar" [size]="'xs'"></fa-icon> 
+                        </span><p>{{item?.stargazers_count}}</p>
+                    </a>
+                    <a *ngIf="item?.forks_count" class="level-item" >
+                    <span class="icon is-small">
+                            <fa-icon [icon]="faNetworkWired" [size]="'xs'"></fa-icon> 
+                        </span><p>{{item?.forks_count}}</p>
+                    </a>
+                    <a *ngIf="item?.updated_at" class="level-item" >
+                            <p>Updated on {{item?.updated_at | date}}</p>
+                        </a>
+                </div>
+            </nav>
+        </div>
+    </article>
+</div>

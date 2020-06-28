@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar top-nav" role="navigation" id="app-top-mav" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item">
       <h5 class="logo-title">GitHub</h5>
@@ -9,10 +9,10 @@
     <div class="navbar-start navbar-start-custom-item">
       <div class="field is-grouped search-box-container">
         <p class="control is-expanded" style="margin-right: 0">
-          <input class="input" type="text"  placeholder="Find a repository">
+          <input [(ngModel)]="searchKey" class="input" type="text" placeholder="Find a repository">
         </p>
         <p class="control">
-          <a class="button is-light search-btn" >
+          <a class="button is-light search-btn" (click)=navigateToSearchResultPage(searchKey)>
             Search
           </a>
         </p>
@@ -20,8 +20,6 @@
     </div>
 
     <div class="navbar-end">
-      <div class="navbar-item">
-      </div>
     </div>
   </div>
 </nav>

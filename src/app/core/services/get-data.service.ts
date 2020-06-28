@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { SearchResult } from '../interfaces/search-result';
 
 const apiEndPoint = environment.apiEndPoint;
@@ -17,6 +17,6 @@ export class GetDataService {
   getPublicRepositories(queryParameter): Observable<SearchResult> {
     return this.http.get<SearchResult>(apiEndPoint + `search/repositories?` + queryParameter);
   }
-  
+
 
 }

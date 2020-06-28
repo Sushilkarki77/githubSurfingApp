@@ -5,23 +5,28 @@ import { FooterComponent } from './footer/footer.component';
 import { ItemSummaryBoxComponent } from './item-summary-box/item-summary-box.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
   declarations: [
     NavComponent,
     FooterComponent,
-    ItemSummaryBoxComponent
+    ItemSummaryBoxComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   exports: [
     NavComponent,
     FooterComponent,
-    ItemSummaryBoxComponent
+    ItemSummaryBoxComponent,
+    LoadingComponent
   ]
 })
 export class SharedModule { }

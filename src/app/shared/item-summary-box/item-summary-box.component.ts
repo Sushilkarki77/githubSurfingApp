@@ -4,6 +4,7 @@ import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,9 +22,13 @@ export class ItemSummaryBoxComponent implements OnChanges {
   faCircle = faCircle;
   faStar = faStar;
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnChanges(): void {
+  }
+
+  navigateToDescription(item: RepoSummary) {
+    this.router.navigate(['detail'], { queryParams: { repo: item?.full_name} });
   }
 
 }

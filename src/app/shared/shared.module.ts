@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingComponent } from './loading/loading.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { LogoComponent } from './logo/logo.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -16,20 +18,23 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
     FooterComponent,
     ItemSummaryBoxComponent,
     LoadingComponent,
-    SearchFilterComponent
+    SearchFilterComponent,
+    LogoComponent
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    RouterModule
   ],
   exports: [
     NavComponent,
     FooterComponent,
     ItemSummaryBoxComponent,
     LoadingComponent,
-    SearchFilterComponent
+    SearchFilterComponent,
+    LogoComponent
   ]
 })
 export class SharedModule { }

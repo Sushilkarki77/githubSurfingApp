@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import {  Subscription } from 'rxjs';
 import { GetDataService } from 'src/app/core/services/get-data.service';
 import { SearchResult } from 'src/app/core/interfaces/search-result';
 import { PaginationInstance } from 'ngx-pagination';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-search-result',
@@ -38,7 +37,7 @@ export class SearchResultComponent implements OnInit, OnDestroy {
 
   subscribeToQueryParamsChange() {
     this.sub = this.route.queryParams.subscribe(params => {
-      this.searchKey = params['searchKey'];
+      this.searchKey = params.searchKey;
       this.getSearchResult();
     });
   }

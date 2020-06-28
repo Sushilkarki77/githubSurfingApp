@@ -77,9 +77,15 @@ app-search-filter {
 }
 
 
-@media screen and (max-width: 1560px) {
+@media screen and (max-width: 1550px) {
     .box {
-        width: 315px;
+        width: 425px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .box {
+        width: 380px;
     }
 }
 @media screen and (max-width: 1300px) {

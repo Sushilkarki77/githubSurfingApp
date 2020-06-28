@@ -6,16 +6,24 @@
     padding: 0.5rem;
     cursor: pointer;
     margin: 8px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 33.3333%;
+    flex-basis: 511px;
+    display: flex;
     .profile-image {
         position: absolute;
         top: 5px;
         right: 5px;
     }
-    nav{
+    nav {
         white-space: nowrap;
         width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .media{
+        width: 100%;
     }
 }
 
@@ -53,20 +61,54 @@
 
 .pagination-link,
 .pagination-next,
-.pagination-previous {
+.pagination-previous,
+app-search-filter {
     box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
 }
 
 .box,
 .pagination-link,
 .pagination-next,
-.pagination-previous {
+.pagination-previous,
+app-search-filter {
     &:hover {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 }
 
-app-search-result {
-    margin-left: auto;
-    margin-right: auto;
+
+@media screen and (max-width: 1560px) {
+    .box {
+        width: 315px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .box {
+        width: 345px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .box {
+        width: 400px;
+    }
+}
+
+
+@media screen and (max-width: 950px) {
+    .box {
+        width: 585px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 520px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .box {
+        width: 450px;
+    }
 }

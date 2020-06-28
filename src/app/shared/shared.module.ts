@@ -7,6 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { LoadingComponent } from './loading/loading.component';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { LoadingComponent } from './loading/loading.component';
     NavComponent,
     FooterComponent,
     ItemSummaryBoxComponent,
-    LoadingComponent
+    LoadingComponent,
+    SearchFilterComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { LoadingComponent } from './loading/loading.component';
     NavComponent,
     FooterComponent,
     ItemSummaryBoxComponent,
-    LoadingComponent
+    LoadingComponent,
+    SearchFilterComponent
   ]
 })
 export class SharedModule { }

@@ -1,5 +1,11 @@
-:host{
+:host {
     display: block;
+}
+
+.top-bar {
+    display: flex;
+    border-bottom: 1px dotted #ccc;
+    margin: 15px 15px 5px 15px;
 }
 
 .flex-container {
@@ -13,11 +19,20 @@
     }
 }
 
-
-pagination-template{
-    nav{
-      max-width: fit-content;
-      margin: 10px;
-      margin-left: auto;
+pagination-template {
+    nav {
+        max-width: fit-content;
+        margin: 10px;
+        margin-left: auto;
     }
+}
+
+app-search-filter {
+    margin-left: auto;
+    margin-top: -15px;
+}
+
+.top-bar,
+pagination-template {
+    width: calc(100vw -100px);
 }

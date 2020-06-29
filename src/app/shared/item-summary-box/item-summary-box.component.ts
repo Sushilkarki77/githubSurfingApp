@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { RepoSummary } from 'src/app/core/interfaces/repo-summary';
-import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faEye } from '@fortawesome/free-solid-svg-icons';
 import { faNetworkWired } from '@fortawesome/free-solid-svg-icons';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -21,6 +21,7 @@ export class ItemSummaryBoxComponent implements OnChanges {
   faNetworkWired = faNetworkWired;
   faCircle = faCircle;
   faStar = faStar;
+  faEye = faEye;
 
   constructor( private router: Router) { }
 

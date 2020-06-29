@@ -9,12 +9,12 @@ export class SearchFilterComponent implements OnInit {
 
   dropDownSortBy = false;
 
-  selectedFilterType = 'Recently updated';
+  selectedFilterType = 'Best Match';
 
   @Output()
   filterTypeChanged = new EventEmitter<string>();
 
-  sortType = ['Best Match', 'Most stars', 'Fewest stars', 'Fewest fork', 'Most Fork', 'Recently updated', 'Least Recently updated'];
+  sortType = ['Best match', 'Most stars', 'Fewest stars', 'Fewest fork', 'Most fork', 'Recently updated', 'Least recently updated'];
 
   @ViewChild('dropdownButtonSortBy', { static: true }) dropdownButtonSortBy: ElementRef;
 

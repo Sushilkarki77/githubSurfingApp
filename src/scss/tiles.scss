@@ -46,6 +46,7 @@
     text-overflow: ellipsis;
     flex-grow: 1;
     width: 100%;
+    cursor: pointer;
     &:hover {
         text-decoration: underline;
         color: #7c61da;
@@ -76,10 +77,23 @@ app-search-filter {
     }
 }
 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
 
-@media screen and (max-width: 1560px) {
+
+
+@media screen and (max-width: 1550px) {
     .box {
-        width: 315px;
+        width: 425px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .box {
+        width: 380px;
     }
 }
 @media screen and (max-width: 1300px) {

@@ -1,12 +1,12 @@
-<div class="box">
+<div class="box" (click)="navigateToDescription(item)">
     <article class="media">
-        <div class="media-content" style=" width: 100%; ">
+        <div class="media-content">
             <div class="content">
-                <div style="margin: 0;">
-                   <div style="display: flex;"> 
+                <div class="content-tob-bar">
+                   <div class="title-container"> 
                        <fa-icon [icon]="faDatabase" [size]="'xs'"></fa-icon><h5 class="box-title" >{{item?.full_name}}</h5>
                     </div>
-                    <div style="min-height: 35px;">
+                    <div class="repo-description">
                         <p class="description">{{item?.description}}</p>
                     </div>
                 </div>
@@ -28,6 +28,11 @@
                             <fa-icon [icon]="faNetworkWired" [size]="'xs'"></fa-icon> 
                         </span><p>{{item?.forks_count}}</p>
                     </a>
+                    <a *ngIf="item?.watchers_count" class="level-item" >
+                        <span class="icon is-small">
+                                <fa-icon [icon]="faEye" [size]="'xs'"></fa-icon> 
+                            </span><p>{{item?.watchers_count}}</p>
+                        </a>
                     <a *ngIf="item?.updated_at" class="level-item" >
                             <p>Updated on {{item?.updated_at | date}}</p>
                         </a>

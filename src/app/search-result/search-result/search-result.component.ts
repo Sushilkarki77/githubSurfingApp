@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { GetDataService } from 'src/app/core/services/get-data.service';
 import { SearchResult } from 'src/app/core/interfaces/search-result';
 import { PaginationInstance } from 'ngx-pagination';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-search-result',
@@ -38,13 +37,14 @@ export class SearchResultComponent implements OnInit, OnDestroy {
 
   subscribeToQueryParamsChange() {
     this.sub = this.route.queryParams.subscribe(params => {
-      this.searchKey = params['searchKey'];
-      this.getSearchResult();
+      this.searchKey = params.searchKey;
+      this.getSearchResult(true);
     });
   }
 
-  getSearchResult() {
+  getSearchResult(resetPagination) {
     this.loading = true;
+    if (resetPagination) { this.resetPagination(); }
     this.searchResult = null;
     const queryParameter = this.getQueryParameter(this.searchKey, this.sort, this.order, this.perPage, this.config.currentPage);
 
@@ -64,12 +64,12 @@ export class SearchResultComponent implements OnInit, OnDestroy {
 
   onPageChange(page) {
     this.config.currentPage = page;
-    this.getSearchResult();
+    this.getSearchResult(false);
   }
 
   changeFilterProps(e) {
     switch (e) {
-      case 'Best Match':
+      case 'Best match':
         this.sort = '';
         this.order = '';
         break;
@@ -93,13 +93,17 @@ export class SearchResultComponent implements OnInit, OnDestroy {
         this.sort = 'updated';
         this.order = 'desc';
         break;
-      case 'Least Recently updated':
+      case 'Least recently updated':
         this.sort = 'updated';
         this.order = 'asc';
         break;
     }
 
-    this.getSearchResult();
+    this.getSearchResult(true);
+  }
+
+  resetPagination(): void {
+    this.config.currentPage = 1;
   }
 
   ngOnDestroy() {

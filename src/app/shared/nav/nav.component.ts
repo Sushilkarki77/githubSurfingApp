@@ -27,7 +27,7 @@ export class NavComponent implements OnInit, OnDestroy {
 
   subscribeToQueryParamsChange() {
     this.sub = this.route.queryParams.subscribe(params => {
-      this.searchKey = params['searchKey'];
+      this.searchKey = params.searchKey;
     });
   }
 

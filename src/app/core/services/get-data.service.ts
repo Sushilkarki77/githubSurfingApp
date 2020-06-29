@@ -23,8 +23,8 @@ export class GetDataService {
     return this.http.get<RepoDetail>(apiEndPoint + `repos/` + title);
   }
 
-  getContents(title): Observable<any> {
-    return this.http.get<any>(apiEndPoint + `repos/` + title + `/contents`);
+  getRepoReadMe(title): Observable<any> {
+    return this.http.get<any>(apiEndPoint + `repos/` + title + `/contents/README.md`);
   }
 
 }

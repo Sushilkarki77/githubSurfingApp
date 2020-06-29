@@ -1,6 +1,19 @@
-:host{
+:host {
     display: block;
 }
-fa-icon{
-    margin-top: 2px;
+
+.media-content {
+    width: 100%;
+}
+.content-tob-bar {
+    margin: 0;
+    fa-icon {
+        margin-top: 2px;
+    }
+    .title-container {
+        display: flex;
+    }
+    .repo-description {
+        min-height: 35px;
+    }
 }

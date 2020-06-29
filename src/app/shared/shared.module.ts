@@ -10,6 +10,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { LogoComponent } from './logo/logo.component';
 import { RouterModule } from '@angular/router';
+import { ProfileImageComponent } from './profile-image/profile-image.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     ItemSummaryBoxComponent,
     LoadingComponent,
     SearchFilterComponent,
-    LogoComponent
+    LogoComponent,
+    ProfileImageComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { RouterModule } from '@angular/router';
     ItemSummaryBoxComponent,
     LoadingComponent,
     SearchFilterComponent,
-    LogoComponent
+    LogoComponent,
+    ProfileImageComponent
   ]
 })
 export class SharedModule { }

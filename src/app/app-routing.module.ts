@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// Though it was ot necessary to do add lazyloading routes, this is just for scalability
+
 const routes: Routes = [
   {
     path: '',

@@ -15,7 +15,9 @@ const routes: Routes = [
   {
     path: 'detail',
     loadChildren: () => import('./detail-page/detail-page.module').then(m => m.DetailPageModule),
-  }
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+
 ];
 
 @NgModule({

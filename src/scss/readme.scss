@@ -22,6 +22,9 @@
     a {
         color: #4183c4;
         text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
     }
 
     a.absent {
@@ -193,6 +196,13 @@
 
     li p.first {
         display: inline-block;
+    }
+    li{
+
+        display: list-item;
+        text-align: -webkit-match-parent;
+        list-style: disc outside;
+    
     }
 
     ul,

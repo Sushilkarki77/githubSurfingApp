@@ -9,7 +9,7 @@ export class SearchFilterComponent implements OnInit {
 
   dropDownSortBy = false;
 
-  selectedFilterType = 'Best Match';
+  selectedFilterType = 'Best match';
 
   @Output()
   filterTypeChanged = new EventEmitter<string>();

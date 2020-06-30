@@ -29,11 +29,11 @@ Angular 9 `npm install -g @angular/cli`
 ## Used Packages
 ```
 
-bulma               //  css framework
+bulma               // css framework
 font-awesome        // icons
-js-base64           //decode readme content which is base64 encoded
+js-base64           // decode readme content which is base64 encoded
 ngx-pagination      // pagination in search/filter 
-remarkable          //render markdown
+remarkable          // render markdown
 ```
 
 

@@ -12,9 +12,9 @@
           <br>{{repoDetail?.description}}
         </h2>
       </div>
-      <div *ngIf="readMeContent" class="readme-content">
+      <div *ngIf="readMeContent" class="readme-content-wrapper">
         <strong>Readme.md</strong>
-        <div [innerHTML]="readMeContent"></div>
+        <div class="readme-content" [innerHTML]="readMeContent"></div>
       </div>
     </div>
 

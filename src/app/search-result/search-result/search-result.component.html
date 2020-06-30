@@ -2,7 +2,7 @@
 <div class="container is-fluid">
     <div [style.visibility]="loading?'hidden': 'unset'" class="top-bar">
         <p>showing {{searchResult?.total_count}} available repository results</p>    
-        <app-search-filter (filterTypeChanged) = "changeFilterProps($event)" ></app-search-filter>
+        <app-search-filter  *ngIf="searchResult?.items?.length > 0" (filterTypeChanged) = "changeFilterProps($event)" ></app-search-filter>
     </div>
     <div *ngIf="!loading" class="flex-container">
         <app-item-summary-box *ngFor="let key of searchResult?.items | paginate: config" [item]="key"></app-item-summary-box>

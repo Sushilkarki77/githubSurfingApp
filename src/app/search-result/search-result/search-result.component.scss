@@ -6,6 +6,9 @@
     display: flex;
     border-bottom: 1px dotted #ccc;
     margin: 15px 15px 5px 15px;
+    width: calc(100% - 190px);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .flex-container {
@@ -20,11 +23,16 @@
 }
 
 pagination-template {
+    display: block;
+    width: calc(100% - 160px);
+    margin-left: auto;
+    margin-right: auto;
     nav {
         max-width: fit-content;
         margin: 10px;
         margin-left: auto;
     }
+
 }
 
 app-search-filter {

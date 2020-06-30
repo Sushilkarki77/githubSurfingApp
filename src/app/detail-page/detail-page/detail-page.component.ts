@@ -7,6 +7,7 @@ import { RepoContent } from 'src/app/core/interfaces/repo-content';
 import { Base64 } from 'js-base64';
 import { Remarkable } from 'remarkable';
 import { faCircle, faCodeBranch, faEye, faExclamation, faNetworkWired } from '@fortawesome/free-solid-svg-icons';
+import { linkify } from 'remarkable/linkify';
 
 @Component({
   selector: 'app-detail-page',
@@ -68,7 +69,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         const md = new Remarkable('full', {
           html: true,
           typographer: true,
-        });
+        }).use(linkify);
         this.readMeContent = md.render(decodedReadMeContent);
       });
   }

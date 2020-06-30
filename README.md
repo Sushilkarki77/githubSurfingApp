@@ -18,11 +18,13 @@ The project structure is as follows(implements lazy loading).
 ```
 
 ## Requirements
+```
 
 Node 12
 NPM 6
 Angular 9 `npm install -g @angular/cli`
 
+```
 
 ## Used Packages
 ```

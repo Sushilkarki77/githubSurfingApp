@@ -23,6 +23,14 @@ Node 12
 NPM 6
 Angular 9 `npm install -g @angular/cli`
 
+
+## Used Packages
+bulma               //  css framework
+font-awesome        // icons
+js-base64           //decode readme content which is base64 encoded
+ngx-pagination      // pagination in search/filter 
+remarkable          //render markdown
+
 ## Getting started
 
 ```
@@ -31,3 +39,6 @@ cd githubSurfingApp
 npm install
 ng serve
 ```
+
+## Demo
+https://sushilkarki77.github.io/

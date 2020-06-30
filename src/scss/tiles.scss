@@ -1,5 +1,5 @@
 .box {
-    width: 400px;
+    width: 425px;
     margin: 10px;
     min-height: 115px;
     position: relative;
@@ -63,15 +63,10 @@
 .pagination-link,
 .pagination-next,
 .pagination-previous,
+.pagination-previous,
+.detail-container
 app-search-filter {
     box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
-}
-
-.box,
-.pagination-link,
-.pagination-next,
-.pagination-previous,
-app-search-filter {
     &:hover {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
@@ -81,6 +76,11 @@ app-search-filter {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+}
+@media screen and (max-width: 1650px) {
+    .box {
+        width: 445px;
+    }
 }
 
 

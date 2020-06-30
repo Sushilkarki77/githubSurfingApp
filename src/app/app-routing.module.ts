@@ -15,11 +15,13 @@ const routes: Routes = [
   {
     path: 'detail',
     loadChildren: () => import('./detail-page/detail-page.module').then(m => m.DetailPageModule),
-  }
+  },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

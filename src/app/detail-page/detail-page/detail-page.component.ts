@@ -65,7 +65,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
         /* readme contents are base64 encoded so, firstly  we need to decode it and convert top html */
         const decodedReadMeContent = this.renderMarkDown(data?.content);
-        const md = new Remarkable();
+        const md = new Remarkable({table: true});
         this.readMeContent = md.render(decodedReadMeContent);
       });
   }

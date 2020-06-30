@@ -5,9 +5,9 @@ import { GetDataService } from 'src/app/core/services/get-data.service';
 import { RepoDetail } from 'src/app/core/interfaces/repo-detail';
 import { RepoContent } from 'src/app/core/interfaces/repo-content';
 import { Base64 } from 'js-base64';
-import { Remarkable } from 'remarkable';
 import { faCircle, faCodeBranch, faEye, faExclamation, faNetworkWired } from '@fortawesome/free-solid-svg-icons';
-import { linkify } from 'remarkable/linkify';
+import { MarkDownConversionService } from 'src/app/core/mark-down-conversion.service';
+
 
 @Component({
   selector: 'app-detail-page',
@@ -31,7 +31,8 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private getDataService: GetDataService
+    private getDataService: GetDataService,
+    private markDownConversionService: MarkDownConversionService
   ) { }
 
   ngOnInit(): void {
@@ -61,16 +62,14 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   }
 
   getRepoReadMe(repoTitle) {
+
     this.getDataService.getRepoReadMe(repoTitle)
       .subscribe((data: RepoContent) => {
 
         /* readme contents are base64 encoded so, firstly  we need to decode it and convert top html */
         const decodedReadMeContent = this.renderMarkDown(data?.content);
-        const md = new Remarkable('full', {
-          html: true,
-          typographer: true,
-        }).use(linkify);
-        this.readMeContent = md.render(decodedReadMeContent);
+
+        this.readMeContent = this.markDownConversionService.renderMarkdown(decodedReadMeContent);
       });
   }
 

@@ -17,7 +17,7 @@ export class SearchResultComponent implements OnInit, OnDestroy {
   searchKey: string;
   searchResult: SearchResult;
   perPage = 36;
-  sort: 'match' | 'stars' | 'fork' | 'updated' | '' = 'updated';
+  sort: 'match' | 'stars' | 'fork' | 'updated' | '' = 'match';
   order: 'asc' | 'desc' | '' = 'desc';
 
   public config: PaginationInstance = {

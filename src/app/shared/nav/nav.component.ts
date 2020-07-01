@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GetDataService } from 'src/app/core/services/get-data.service';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -19,8 +18,8 @@ export class NavComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscribeToQueryParamsChange();
-
   }
+
   navigateToSearchResultPage(key): void {
     if (key && key.trim()) { this.router.navigate(['search'], { queryParams: { searchKey: key } }); }
   }
@@ -31,10 +30,15 @@ export class NavComponent implements OnInit, OnDestroy {
     });
   }
 
+  keyupSearchInputField(event, searchKey) {
+    if (event.keyCode === 13) {
+      this.navigateToSearchResultPage(searchKey);
+    }
+  }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
 
 }
 

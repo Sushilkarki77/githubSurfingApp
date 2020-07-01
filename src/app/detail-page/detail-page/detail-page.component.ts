@@ -65,7 +65,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
     this.getDataService.getRepoReadMe(repoTitle)
       .subscribe((data: RepoContent) => {
-
         /* readme contents are base64 encoded so, firstly  we need to decode it and convert top html */
         const decodedReadMeContent = this.renderMarkDown(data?.content);
 

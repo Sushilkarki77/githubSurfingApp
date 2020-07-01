@@ -1,19 +1,19 @@
 <app-loading *ngIf="loading"></app-loading>
 <section *ngIf="!loading" class="section detail-container">
   <div class="container content-wrapper">
-    
+
     <div class="left-container">
       <a [href]="repoDetail?.html_url" target="blank">
         <h1 class="title box-title">{{repoDetail?.full_name}}</h1>
       </a>
       <div class="short-description-wrapper">
+        <strong>About: </strong>
         <h2 class="subtitle description">
-          <strong>About: </strong>
-          <br>{{repoDetail?.description}}
+          {{repoDetail?.description}}
         </h2>
       </div>
       <div *ngIf="readMeContent" class="readme-content-wrapper">
-        <strong>Readme.md</strong>
+        <strong>README.md</strong>
         <div class="readme-content" [innerHTML]="readMeContent"></div>
       </div>
     </div>
@@ -22,35 +22,35 @@
       <p class="menu-label">
         Details:
       </p>
-      <ul class="menu-list">
+      <ul class="menu-list-modified">
         <li>Owner:</li>
         <li>
           <app-profile-image [imgSrc]="repoDetail?.owner?.avatar_url"></app-profile-image><a
             [href]="repoDetail?.owner?.html_url" target="blank"> {{repoDetail.owner.login}}</a>
         </li>
       </ul>
-      <ul class="menu-list">
+      <ul class="menu-list-modified">
         <li>Default Branch:</li>
         <li>
           <fa-icon [icon]="codeBrach" [size]="'xs'"></fa-icon>
           <a> {{repoDetail?.default_branch}}</a>
         </li>
       </ul>
-      <ul class="menu-list">
+      <ul class="menu-list-modified">
         <li>Open Issues: </li>
         <li>
           <fa-icon [icon]="faExclamation" [size]="'xs'"></fa-icon>
           <a>{{repoDetail?.open_issues_count}}</a>
         </li>
       </ul>
-      <ul class="menu-list">
+      <ul class="menu-list-modified">
         <li>Watchers:</li>
         <li>
           <fa-icon [icon]="faEye" [size]="'xs'"></fa-icon>
           <a> {{repoDetail?.watchers_count}}</a>
         </li>
       </ul>
-      <ul class="menu-list">
+      <ul class="menu-list-modified">
         <li>Forks:</li>
         <li>
           <fa-icon [icon]="faNetworkWired" [size]="'xs'"></fa-icon>

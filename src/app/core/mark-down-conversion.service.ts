@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Remarkable } from 'remarkable';
-import { linkify } from 'remarkable/linkify';
 import * as  hljs from 'highlight.js'; // https://highlightjs.org/
 
 @Injectable({
@@ -9,7 +8,6 @@ import * as  hljs from 'highlight.js'; // https://highlightjs.org/
 export class MarkDownConversionService {
 
   constructor() { }
-
 
   renderMarkdown(markdown) {
     const md = new Remarkable('full', {
@@ -29,6 +27,7 @@ export class MarkDownConversionService {
 
       // Highlighter function. Should return escaped HTML,
       // or '' if input not changed
+
       highlight(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
           try {
@@ -42,10 +41,9 @@ export class MarkDownConversionService {
 
         return ''; // use external default escaping
       }
-    }).use(linkify);
+    });
 
     const readMeContent = md.render(markdown);
     return readMeContent;
-
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Remarkable } from 'remarkable';
 import * as  hljs from 'highlight.js'; // https://highlightjs.org/
+import { linkify } from 'remarkable/linkify';
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +42,7 @@ export class MarkDownConversionService {
 
         return ''; // use external default escaping
       }
-    });
+    }).use(linkify);
 
     const readMeContent = md.render(markdown);
     return readMeContent;
